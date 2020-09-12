@@ -25,7 +25,7 @@ if ~isfield(pars,'prct') || isempty(pars.prct)
     pars.prct = 99.9;
 end
 if ~isfield(pars,'inner_corr') || isempty(pars.inner_corr)
-    pars.inner_corr = 5;
+    pars.inner_corr = 0;
 end
 
 % 2.- Selection of bins
