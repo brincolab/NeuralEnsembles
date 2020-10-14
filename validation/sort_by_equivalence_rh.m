@@ -12,6 +12,11 @@ function [ensmat_in_sort, enscells_in_sort, ens_id] = sort_by_equivalence_rh(ens
 %   enscells_in_sort: <logical> N-by-nens_1 matrix with the core cells of each ensemble
 %     detected sorted with respect to ensembles generated.
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 [nens1,T] = size(ensmat_gt);
 [N,nens2] = size(enscells_est);
 % min_nens = min(nens1,nens2);

@@ -19,6 +19,11 @@ function [neuronid,idthr,ens_cel_corr,sur_cel_cor] = find_core_cells_by_correlat
 %
 % 'neuronid' is a Nx1 vector, where each entry is either 0 or 1, where 0 is
 % non core neuron and 1 a core neuron.
+
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 warning('off')
 [N,T] = size(raster);
 [nens,Tens] = size(ens_raster);

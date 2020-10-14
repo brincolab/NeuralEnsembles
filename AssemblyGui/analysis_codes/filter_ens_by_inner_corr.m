@@ -1,4 +1,8 @@
 function [ens_corr,corr_thr,selection] = filter_ens_by_inner_corr(raster,core_cells,sdfact)
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 
 C_cells = corrcoef(raster');
 C_cells = triu(C_cells,1);

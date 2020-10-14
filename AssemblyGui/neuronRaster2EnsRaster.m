@@ -51,6 +51,11 @@ function [ens_seq,maxcor,templates,core_cells,clust_out,pars] = neuronRaster2Ens
 %   'cents' are the indices of the centroids
 %   'predbounds' is the treshold on the delta vs rho plot
 % 'pars' is the set of parameters used in the analysis.
+%
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 
 % Checking input parameters. If any input parameter is absent, will use
 % default

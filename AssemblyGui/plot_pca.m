@@ -1,4 +1,9 @@
 function plot_pca(ax,pcs,ens_labs,ens_cols)
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 cla(ax);
 np = size(pcs,2);
 if isempty(ens_labs) || isempty(ens_cols) % plots raster with no color

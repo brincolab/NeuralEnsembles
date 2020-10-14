@@ -11,6 +11,10 @@ function [ens_seq,maxcor,tmpcor] = ens_raster_from_templates(tmplts,raster,ccthr
 % raster is a N x T raster, where raster(n,t)=1 if neuron n fired at time T
 % and 0 otherwise.
 % ccthr is the threshold for correlation between template and a given bin
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 if islogical(raster)
     raster = single(raster);
 end

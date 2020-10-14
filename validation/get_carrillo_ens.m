@@ -11,6 +11,11 @@ function [ensmat_in, enscells_in, nens, time_comp] = get_carrillo_ens(raster, pa
 %   time_comp: <float> with the time of computing in detection algorithm.
 
 % If param variable don't exist, then it's created by default
+
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 if ~exist('param','var')
 %     param = struct('pks',4,'ticut',[],'jcut',[],'state_cut',[]); % automatic parameters based on surrogate data
 %     param = struct('pks',10,'ticut',0.3,'jcut',0.08,'state_cut',10); % seems optimal between computer performance and precision with synth data

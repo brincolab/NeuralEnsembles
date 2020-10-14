@@ -1,6 +1,10 @@
 function [numClust, centInd,predbounds] = cluster_by_pow_fit(delta,rho,pb)
 % fits a power law to the rho vs delta plot and uses 'pb' as a threshold
 % for detecting cluster centroids.
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 NE = length(rho);
 centInd = zeros(1, NE);
 % fitting a line to log(delta) vs log(rho) and using 99.9

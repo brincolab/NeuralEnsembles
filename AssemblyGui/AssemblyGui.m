@@ -25,6 +25,11 @@ function varargout = AssemblyGui(varargin)
 % Last Modified by GUIDE v2.5 02-Mar-2018 03:50:39
 
 % Begin initialization code - DO NOT EDIT
+
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
     'gui_Singleton',  gui_Singleton, ...

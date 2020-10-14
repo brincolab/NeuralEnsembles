@@ -21,22 +21,14 @@ function [Nens,ensId,centInd,haloInd,delta,rho,predbounds]=find_ens_by_density(d
 % 'delta' is the minimum distance between point it and any other point with
 % higher density
 % 'rho' is the local density of point i
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 
-% avoiding 0 distances between identical patterns
-%dist(dist<eps)=eps;
-%dist(1:size(dist,2)+1:end)=0; % diagonal to 0 
+
 [~, rho] = paraSetv2(dist, percNeigh );
-%distRow = squareform(dist, 'tovector');
-%sortDistRow = sort(distRow);
-%[NE, ~] = size(dist);
-
-%dc = sortDistRow(round((NE*(NE-1)/2)*percNeigh));
-%dc = prctile(sortDistRow,percNeigh*100);
-%clear distRow sortDistRow
-
-
-%[Nens, ensId, centInd, haloInd, delta,predbounds] = densityClust_fast(dist, dc, rho,ishalo,clusmet);
-[Nens, ensId, centInd, haloInd, delta,predbounds] = densityClust_fast(dist, [], rho,ishalo,clusmet);
+[Nens, ensId, centInd, haloInd, delta,predbounds] = densityClust_fast(dist, rho,ishalo,clusmet);
 
 if plt~=0
     figure;

@@ -10,6 +10,11 @@ function [ensmat_in, enscells_in, nens, time_comp] = get_herzog_ens(raster, para
 %   nens: <integer> with the number of ensembles detected.
 %   time_comp: <float> with the time of computing in detection algorithm.
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 % If param variable don't exist, then it's created by default
 if(~exist('param','var'))
     param = struct('dc',[],'npcs',[],'minspk',[],'nsur',[],'prct',[],'cent_thr',[],'inner_corr',[],'minsize',[]);

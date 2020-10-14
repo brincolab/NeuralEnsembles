@@ -40,6 +40,11 @@ function [sampCent,Ts,nsamp] = subSample_ensembles_pca(raster,minSpk,sampFac,prc
 % 'templates' is a N x Nens matrix, with the representative template of the
 % each ensemble.
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 % bytes to single-type variables size
 singleSize = 4;
 

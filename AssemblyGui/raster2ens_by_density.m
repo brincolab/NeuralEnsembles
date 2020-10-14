@@ -2,6 +2,11 @@ function [sel_ensmat_out,sel_core_cells] =  raster2ens_by_density(raster,pars)
 % raster = N x T binary matrix
 % pars is a structure with the following parameters
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 % 1.- parameters definitions
 if ~isfield(pars,'npcs') || isempty(pars.npcs)
     pars.npcs = 6;

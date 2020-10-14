@@ -5,6 +5,11 @@ function [raster] = ts2binaryraster(spks,bin,sr)
 % 'spks' samples at 'sr' sampling rate into a
 % binary (logical) raster 'raster' with bin size 'bin' s.
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 N = length(spks); % Number of units
 maxt = cellfun(@(x) max(x),spks,'uniformoutput',0); % maximum time for all the units
 nonempt = cellfun(@(x) ~isempty(x),spks);

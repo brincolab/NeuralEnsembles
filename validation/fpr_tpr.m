@@ -11,6 +11,11 @@ function [fpr, tpr] = fpr_tpr(data_real, data_est)
 %   tpr: <float> 1-by-T vector with TPR (True Positive Rate) between data_real columns
 %     and data_est columns.
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 % Get size of data_real and data_est
 % dim_real = size(data_real);
 % dim_est = size(data_est);

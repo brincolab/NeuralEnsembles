@@ -18,6 +18,11 @@ function [ensmat_in,enscells_in,raster,frates] = generate_data(N,T,nens,ncellspe
 %   raster: <logical> N-by-T matrix with the raster.
 %   frates: <float> N-by-1 vector with the firing rate of each neuron.
 
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
+
 %% Formatting parameters
 %Converts Ncellsperens in a vector
 if isscalar(ncellsperens)

@@ -1,12 +1,12 @@
-function [numClust, clustInd, centInd, haloInd, delta,predbounds] = densityClust_fast(dist, dc, rho, isHalo, autosel)
+function [numClust, clustInd, centInd, haloInd, delta,predbounds] = densityClust_fast(dist, rho, isHalo, autosel)
 % DENSITYCLUST Clustering by fast search and find of density peaks.
 %   SEE the following paper published in *SCIENCE* for more details:
 %       Alex Rodriguez & Alessandro Laio: Clustering by fast search and find of density peaks,
 %       Science 344, 1492 (2014); DOI: 10.1126/science.1242072.
 %   INPUT:
 %       dist: [NE, NE] distance matrix
-%       dc: cut-off distance
-%       rho: local density [row vector]
+%       rho: local density [row vector] (previously calculated using a
+%       given dc)
 %       isHalo: 1 denotes that the haloInd assigment is provided, otherwise 0.
 %       autosel: string with the method used for automcatic centroid
 %       detection
@@ -18,7 +18,11 @@ function [numClust, clustInd, centInd, haloInd, delta,predbounds] = densityClust
 %
 %
 % MODIFIED BY RUBEN HERZOG 2017.
-% Uses matrix operations instead of several for. Optimized for GPUs
+
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 
 [sortrho, ordRho] = sort(rho, 'descend');
 

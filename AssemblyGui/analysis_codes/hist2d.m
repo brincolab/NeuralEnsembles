@@ -1,5 +1,9 @@
 function [x_hist,y_hist,thr] = hist2d(xdata,ydata,nbins)
 %%
+% Reference paper: Herzog et al. 2020 "Scalable and accurate automated method 
+% for neuronal ensemble detection in spiking neural networks"
+% https://www.biorxiv.org/content/10.1101/2020.10.12.335901v1
+% Rubén Herzog October 2020
 remids = isnan(xdata) | isnan(ydata);
 xdata(remids)=[];
 ydata(remids)=[];
